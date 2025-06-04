@@ -1,0 +1,30 @@
+{
+  "name": "mern-tutorial",
+  "version": "1.0.0",
+  "description": "Basic MERN Stack Application",
+  "homepage": "https://github.com/merzosted/Mern-Tutorial#readme",
+  "bugs": {
+    "url": "https://github.com/merzosted/Mern-Tutorial/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/merzosted/Mern-Tutorial.git"
+  },
+  "license": "ISC",
+  "author": "Rizwan Khan",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "tsnd src/server/server.ts"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "eslint": "^9.28.0",
+    "prettier": "^3.5.3",
+    "ts-node-dev": "^2.0.0"
+  }
+}
