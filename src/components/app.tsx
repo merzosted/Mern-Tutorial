@@ -1,0 +1,21 @@
+import { useState , useEffect} from "react";
+
+import Header from "./Header";
+
+const App = () => {
+    const [counter, setCounter] = useState(0)
+    // useEffect(()=>
+    //     console.log(".....") , []
+    // )
+
+    return (
+        <div className="container">
+            <Header message={"Naming Contests"} />
+            <button onClick={()=>{
+                setCounter(counter+1 )
+            }}>{counter}</button>
+        </div>
+    );
+}
+
+export default App;
