@@ -1,6 +1,6 @@
 import { useState , useEffect} from "react";
 
-import Header from "./Header";
+import Header from "./header";
 
 const App = () => {
     const [counter, setCounter] = useState(0)
