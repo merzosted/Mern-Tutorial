@@ -9,7 +9,7 @@ const serverRender = async () => {
     <App initialData={{contests}} /> // Pass contests array, not object
   );
 
-  return { initialMarkup };
+  return { initialMarkup, initialData :{contests} };
 };
 
 export default serverRender

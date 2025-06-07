@@ -2,7 +2,6 @@ import { useState , useEffect} from "react";
 
 import Header from "./header";
 import ContestList from "./contest-list";
-
 const App = ({initialData}) => {
     // const [counter, setCounter] = useState(0)
     // // useEffect(()=>
