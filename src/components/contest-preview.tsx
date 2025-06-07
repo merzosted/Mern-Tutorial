@@ -1,3 +1,4 @@
+import * as React from 'react'
 const ContestPreview = ({contest}) => {
     return(
         <div className="contest-preview">
