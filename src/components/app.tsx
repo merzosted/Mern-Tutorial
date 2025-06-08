@@ -6,13 +6,14 @@ import Contest from "./contest";
 //Page Variable : contestList or contests
 const App = ({initialData}) => {
   
-    const [page, setPage] = useState("contestList")
-    const [currentContestId, setCurrentContestId] = useState()
+    const [page, setPage] = useState(
+        initialData.currentContest? "contest" : "contestList")
+    const [currentContest, setCurrentContest] = useState(initialData.currentContest)
 
     useEffect(()=>{
         window.onpopstate = (event) =>{
             const newPage = event.state?.contestId ? "contest" : "contestList"
-            setCurrentContestId(event.state?.contestId)
+            setCurrentContest({id : event.state?.contestId})
             setPage(newPage)
             
         }
@@ -20,14 +21,19 @@ const App = ({initialData}) => {
     const navigateToContest= (contestId) => {
         window.history.pushState({contestId}, "", `/contest/${contestId}`)
         setPage("contest")
-        setCurrentContestId(contestId)
+        setCurrentContest({id : contestId})
+    }
+    const navigateToContestList= () => {
+        window.history.pushState({}, "", "/")
+        setPage("contestList")
+        setCurrentContest(undefined)
     }
     const pageContent = () => {
         switch (page){ 
             case "contestList":
                 return <ContestList initialContests = {initialData.contests} onContestClick = {navigateToContest}/>
             case "contest":
-                return <Contest id =  { currentContestId } />
+                return <Contest initialContest =  { currentContest } onContestListClick={navigateToContestList} />
         }
     }
 

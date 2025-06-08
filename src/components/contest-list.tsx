@@ -3,12 +3,14 @@ import ContestPreview from "./contest-preview"
 import { fetchContests } from "../api-client"
 import Header from "./header";
 const ContestList = ({ initialContests , onContestClick}) => {
-    const [contests, setContests] = useState(initialContests);
+    const [contests, setContests] = useState(initialContests ?? []);
     useEffect(()=> {
-        // fetchContests().then((contests)=> {
-        //     setContests(contests)
-        // })
-    }, [])
+        if(!initialContests){
+            fetchContests().then((contests)=> {
+            setContests(contests)
+        })   
+        }
+    }, [initialContests])
     return (
        <>
         <Header message={"Naming Contests"} />
